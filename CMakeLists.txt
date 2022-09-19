@@ -4,4 +4,4 @@ project(snake)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(snake
-        main.cpp CMenu.h CMenu.cpp CEngine.h CEngine.cpp CGame.h CGame.cpp)
+        main.cpp CMenu.h CMenu.cpp CEngine.h CEngine.cpp CGame.h CGame.cpp CSnake.h CSnake.cpp)

@@ -43,5 +43,10 @@ void Engine::run() {
         if (checkCin()) {
             mainMenuPtr->processInput(menuChoice);
         }
+
+        if (mainMenuPtr->isPlaySelected()) {
+            game.init();
+            game.printPlayground();
+        }
     }
 }

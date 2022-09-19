@@ -6,6 +6,7 @@
 #define SNAKE_CENGINE_H
 
 #include "CMenu.h"
+#include "CGame.h"
 
 class Engine {
 public:
@@ -17,6 +18,7 @@ private:
     static void clearTerminal();
     static bool checkCin();
     int menuChoice;
+    Game game;
 };
 
 #endif //SNAKE_CENGINE_H
