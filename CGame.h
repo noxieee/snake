@@ -20,9 +20,14 @@ using std::endl;
 
 class Game {
 public:
+    Game();
+    void run();
+    void reset();
+private:
     void initPlayground();
     void printPlayground();
-private:
+    void putSnakeInPlayground();
+    bool gameEnded;
     Snake snakePlayer;
     vector<vector<char>> playground;
 };

@@ -4,6 +4,10 @@
 
 #include "CGame.h"
 
+Game::Game() {
+    gameEnded = false;
+}
+
 void Game::initPlayground() {
     for (int y = 0; y < PLAYGROUND_HEIGHT; y++) {
         vector<char> tmp;
@@ -32,4 +36,27 @@ void Game::printPlayground() {
 
         cout << endl;
     }
+}
+
+void Game::putSnakeInPlayground() {
+    vector<pair<int,int>> tmp = snakePlayer.getSnakeRef();
+
+    for (const auto & coords: tmp) {
+        playground[coords.second][coords.first] = 'S';
+    }
+}
+
+void Game::run() {
+    initPlayground();
+
+    while (!gameEnded) {
+        putSnakeInPlayground();
+        printPlayground();
+        // Update game - update snake, check for collision, update snake head in playground, remove tail piece
+    }
+}
+
+void Game::reset() {
+    playground.clear();
+    gameEnded = false;
 }
