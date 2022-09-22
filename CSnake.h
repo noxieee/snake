@@ -16,7 +16,6 @@ using std::pair;
 class Snake {
 public:
     Snake();
-    vector<pair<int,int>> & getSnakeRef();
 private:
     vector<pair<int,int>> snake;
 };

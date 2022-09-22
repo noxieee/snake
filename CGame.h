@@ -11,12 +11,16 @@
 using std::cout;
 using std::endl;
 
-#define PLAYGROUND_MAX_X 39
-#define PLAYGROUND_MAX_Y 24
+#define PLAYGROUND_WIDTH 50
+#define PLAYGROUND_HEIGHT 31
+#define PLAYER_MIN_X 1
+#define PLAYER_MAX_X (PLAYGROUND_WIDTH - 1)
+#define PLAYER_MIN_Y 1
+#define PLAYER_MAX_Y (PLAYGROUND_HEIGHT - 1)
 
 class Game {
 public:
-    void init();
+    void initPlayground();
     void printPlayground();
 private:
     Snake snakePlayer;

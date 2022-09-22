@@ -45,7 +45,6 @@ void MainMenu::processInput(const int &userInput) {
     switch (userInput) {
         case 1:
             playSelected = true;
-            cout << "\nPlaying..." << endl;
             break;
         case 2:
             displayHighscore(HIGHSCORE_FILENAME);

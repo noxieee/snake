@@ -45,7 +45,7 @@ void Engine::run() {
         }
 
         if (mainMenuPtr->isPlaySelected()) {
-            game.init();
+            game.initPlayground();
             game.printPlayground();
         }
     }

@@ -8,8 +8,3 @@ Snake::Snake() {
     snake = SNAKE_START;
 }
 
-vector<pair<int,int>> & Snake::getSnakeRef() {
-    return snake;
-}
-
-
