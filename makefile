@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -Wall -pedantic -O2 -g -fsanitize=address
-NAME = snake
+NAME = snake.out
 
 all: main.o CEngine.o CMenu.o CGame.o CSnake.o
 	$(CC) $(CFLAGS) -o $(NAME) main.o CEngine.o CMenu.o CGame.o CSnake.o

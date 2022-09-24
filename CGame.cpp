@@ -48,9 +48,10 @@ void Game::putSnakeInPlayground() {
 
 void Game::run() {
     initPlayground();
+    putSnakeInPlayground();
+
 
     while (!gameEnded) {
-        putSnakeInPlayground();
         printPlayground();
         // Update game - update snake, check for collision, update snake head in playground, remove tail piece
     }
