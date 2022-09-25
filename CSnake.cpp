@@ -12,4 +12,3 @@ Snake::Snake() {
 vector<pair<int,int>>& Snake::getSnakeRef() {
     return snake;
 }
-
