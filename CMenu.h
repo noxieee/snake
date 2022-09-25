@@ -24,7 +24,7 @@ public:
     void processInput(const int &userInput);
     bool isQuitSelected() const;
     bool isPlaySelected() const;
-    void resetVariables();
+    void resetPlayVariable();
 private:
     string menuText;
     bool quitSelected;

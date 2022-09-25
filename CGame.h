@@ -7,6 +7,7 @@
 
 #include "CSnake.h"
 #include <iostream>
+#include <unistd.h>
 
 using std::cout;
 using std::endl;
@@ -27,6 +28,7 @@ private:
     void initPlayground();
     void printPlayground();
     void putSnakeInPlayground();
+    static void clearTerminal();
     bool gameEnded;
     Snake snakePlayer;
     vector<vector<char>> playground;

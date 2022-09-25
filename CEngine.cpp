@@ -46,6 +46,8 @@ void Engine::run() {
 
         if (mainMenuPtr->isPlaySelected()) {
             game.run();
+            game.reset();
+            mainMenuPtr->resetPlayVariable();
         }
     }
 }

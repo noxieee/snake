@@ -6,6 +6,7 @@
 
 Snake::Snake() {
     snake = SNAKE_START;
+    direction = DIRECTION_NONE;
 }
 
 vector<pair<int,int>>& Snake::getSnakeRef() {

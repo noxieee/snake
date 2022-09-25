@@ -58,7 +58,6 @@ void MainMenu::processInput(const int &userInput) {
     }
 }
 
-void MainMenu::resetVariables() {
+void MainMenu::resetPlayVariable() {
     playSelected = false;
-    quitSelected = false;
 }
