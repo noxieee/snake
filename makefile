@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -Wall -pedantic -O2 -g -fsanitize=address
+CFLAGS = -Wall -pedantic -g -fsanitize=address
 NAME = snake.out
 
 all: main.o CEngine.o CMenu.o CGame.o CSnake.o

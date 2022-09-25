@@ -15,10 +15,7 @@ public:
     void run();
 private:
     MainMenu * mainMenuPtr;
-    static void clearTerminal();
-    static bool checkCin();
-    int menuChoice;
-    Game game;
+    Game * gamePtr;
 };
 
 #endif //SNAKE_CENGINE_H

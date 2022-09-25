@@ -21,14 +21,17 @@ class MainMenu {
 public:
     MainMenu();
     void displayMenu() const;
-    void processInput(const int &userInput);
     bool isQuitSelected() const;
     bool isPlaySelected() const;
     void resetPlayVariable();
+    void takeUserInput();
 private:
     string menuText;
+    int menuChoice;
     bool quitSelected;
     bool playSelected;
+    void processInput();
+    static bool checkCin();
     static void displayHighscore(const string &fileName);
 };
 

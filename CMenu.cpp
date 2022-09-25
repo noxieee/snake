@@ -8,6 +8,7 @@ MainMenu::MainMenu() {
     menuText = "\nMain menu - select:\n1 - Play\n2 - View highscore\n3 - Quit.\n";
     quitSelected = false;
     playSelected = false;
+    menuChoice = 0;
 }
 
 void MainMenu::displayMenu() const {
@@ -41,8 +42,29 @@ void MainMenu::displayHighscore(const string &fileName) {
     }
 }
 
-void MainMenu::processInput(const int &userInput) {
-    switch (userInput) {
+bool MainMenu::checkCin() {
+    if (!cin) {
+        cout << "\nInvalid input." << endl;
+        cin.clear();
+        cin.ignore();
+
+        return false;
+    }
+
+    return true;
+}
+
+void MainMenu::takeUserInput() {
+    cin >> menuChoice;
+    system("clear");
+
+    if (checkCin()) {
+        processInput();
+    }
+}
+
+void MainMenu::processInput() {
+    switch (menuChoice) {
         case 1:
             playSelected = true;
             break;

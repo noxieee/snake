@@ -8,12 +8,6 @@ Game::Game() {
     gameEnded = false;
 }
 
-void Game::clearTerminal() {
-    if (system("clear")) {
-        cout << "!!! Failed to clear terminal !!!" << endl;
-    }
-}
-
 void Game::initPlayground() {
     for (int y = 0; y < PLAYGROUND_HEIGHT; y++) {
         vector<char> tmp;
@@ -52,6 +46,12 @@ void Game::putSnakeInPlayground() {
     }
 }
 
+void Game::clearTerminal() {
+    if (system("clear")) {
+        cout << "!!! Failed to clear terminal !!!" << endl;
+    }
+}
+
 void Game::run() {
     initPlayground();
     putSnakeInPlayground();
@@ -59,7 +59,7 @@ void Game::run() {
 
     while (!gameEnded) {
         printPlayground();
-        // Update game - update snake, check for collision, update snake head in playground, remove tail piece
+        // Update gamePtr - update snake, check for collision, update snake head in playground, remove tail piece
         usleep(200000);
         clearTerminal();
     }
