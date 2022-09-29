@@ -1,9 +1,10 @@
 CC = g++
 CFLAGS = -Wall -pedantic -g -fsanitize=address
 NAME = snake.out
+LIB = -lsfml-graphics -lsfml-window -lsfml-system
 
 all: main.o CEngine.o CMenu.o CGame.o CSnake.o
-	$(CC) $(CFLAGS) -o $(NAME) main.o CEngine.o CMenu.o CGame.o CSnake.o
+	$(CC) $(CFLAGS) -o $(NAME) main.o CEngine.o CMenu.o CGame.o CSnake.o $(LIB)
 	make clean
 	clear
 	./$(NAME)

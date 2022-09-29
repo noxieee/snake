@@ -90,4 +90,3 @@ void Snake::checkSakeCollision() {
 bool Snake::hasSnakeCrashed() const {
     return crashed;
 }
-

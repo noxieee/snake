@@ -102,6 +102,12 @@ build CMakeFiles/snake.dir/CSnake.cpp.o: CXX_COMPILER__snake_Debug /home/vojta/c
   OBJECT_DIR = CMakeFiles/snake.dir
   OBJECT_FILE_DIR = CMakeFiles/snake.dir
 
+build CMakeFiles/snake.dir/CSfmlEngine.cpp.o: CXX_COMPILER__snake_Debug /home/vojta/cpp/cpp_projects/snake/CSfmlEngine.cpp || cmake_object_order_depends_target_snake
+  DEP_FILE = CMakeFiles/snake.dir/CSfmlEngine.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/snake.dir
+  OBJECT_FILE_DIR = CMakeFiles/snake.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target snake
@@ -110,7 +116,7 @@ build CMakeFiles/snake.dir/CSnake.cpp.o: CXX_COMPILER__snake_Debug /home/vojta/c
 #############################################
 # Link the executable snake
 
-build snake: CXX_EXECUTABLE_LINKER__snake_Debug CMakeFiles/snake.dir/main.cpp.o CMakeFiles/snake.dir/CMenu.cpp.o CMakeFiles/snake.dir/CEngine.cpp.o CMakeFiles/snake.dir/CGame.cpp.o CMakeFiles/snake.dir/CSnake.cpp.o
+build snake: CXX_EXECUTABLE_LINKER__snake_Debug CMakeFiles/snake.dir/main.cpp.o CMakeFiles/snake.dir/CMenu.cpp.o CMakeFiles/snake.dir/CEngine.cpp.o CMakeFiles/snake.dir/CGame.cpp.o CMakeFiles/snake.dir/CSnake.cpp.o CMakeFiles/snake.dir/CSfmlEngine.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/snake.dir
   POST_BUILD = :
