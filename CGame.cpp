@@ -6,6 +6,12 @@
 
 Game::Game() {
     gameEnded = false;
+    snakePlayer = new Snake;
+    score = 0;
+}
+
+Game::~Game() {
+    delete snakePlayer;
 }
 
 void Game::initPlayground() {
@@ -38,34 +44,63 @@ void Game::printPlayground() {
     }
 }
 
-void Game::putSnakeInPlayground() {
-    vector<pair<int,int>> tmp = snakePlayer.getSnakeRef();
-
-    for (const auto & coords: tmp) {
-        playground[coords.second][coords.first] = 'S';
-    }
-}
-
-void Game::clearTerminal() {
-    if (system("clear")) {
-        cout << "!!! Failed to clear terminal !!!" << endl;
-    }
-}
-
 void Game::run() {
     initPlayground();
     putSnakeInPlayground();
 
+    for (int i = 3; i > 0; i--) {
+        system("clear");
+        cout << "Starting in: " << i << endl;
+        printPlayground();
+        sleep(1);
+    }
+
+    snakePlayer->setDirection(DIRECTION_LEFT);
+
+    system("clear");
 
     while (!gameEnded) {
+        cout << "Score: " << score << endl;
         printPlayground();
-        // Update gamePtr - update snake, check for collision, update snake head in playground, remove tail piece
-        usleep(200000);
-        clearTerminal();
+        updatePlaygroundSnakeTail();
+        snakePlayer->update();
+        updatePlaygroundSnakeHead();
+
+        if (snakePlayer->hasSnakeCrashed()) {
+            gameEnded = true;
+            cout << "Snake crashed" << endl;
+        }
+
+        usleep(150000);
+        system("clear");
     }
 }
 
 void Game::reset() {
     playground.clear();
     gameEnded = false;
+    delete snakePlayer;
+    snakePlayer = new Snake;
+}
+
+void Game::putSnakeInPlayground() {
+    vector<pair<int,int>> tmpSnakeVect = snakePlayer->getSnakeRef();
+
+    for (const auto& coords: tmpSnakeVect) {
+        playground[coords.second][coords.first] = 'S';
+    }
+}
+
+void Game::updatePlaygroundSnakeHead() {
+    if (snakePlayer->hasDirection()) {
+        vector<pair<int,int>> tmpSnakeVect = snakePlayer->getSnakeRef();
+        playground[tmpSnakeVect[0].second][tmpSnakeVect[0].first] = 'S';
+    }
+}
+
+void Game::updatePlaygroundSnakeTail() {
+    if (snakePlayer->hasDirection()) {
+        vector<pair<int,int>> tmpSnakeVect = snakePlayer->getSnakeRef();
+        playground[tmpSnakeVect.back().second][tmpSnakeVect.back().first] = ' ';
+    }
 }

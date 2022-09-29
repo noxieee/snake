@@ -18,13 +18,30 @@ using std::pair;
 #define DIRECTION_LEFT 3
 #define DIRECTION_RIGHT 4
 
+#define PLAYGROUND_WIDTH 50
+#define PLAYGROUND_HEIGHT 31
+#define PLAYER_MIN_X 1
+#define PLAYER_MAX_X (PLAYGROUND_WIDTH - 2)
+#define PLAYER_MIN_Y 1
+#define PLAYER_MAX_Y (PLAYGROUND_HEIGHT - 2)
+
 class Snake {
 public:
     Snake();
     vector<pair<int,int>>& getSnakeRef();
+    void setDirection(const int& direction);
+    void update();
+    bool hasDirection() const;
+    bool hasSnakeCrashed() const;
+
 private:
-    vector<pair<int,int>> snake;
+    vector<pair<int,int>> snakeVect;
+    void popTail();
+    void pushFrontNewHead();
+    void correctHeadCoords();
+    void checkSakeCollision();
     int direction;
+    bool crashed;
 };
 
 #endif //SNAKE_CSNAKE_H

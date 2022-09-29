@@ -5,8 +5,8 @@ NAME = snake.out
 all: main.o CEngine.o CMenu.o CGame.o CSnake.o
 	$(CC) $(CFLAGS) -o $(NAME) main.o CEngine.o CMenu.o CGame.o CSnake.o
 	make clean
-	./$(NAME)
 	clear
+	./$(NAME)
 
 main.o: main.cpp CEngine.h
 	$(CC) $(CFLAGS) -c main.cpp

@@ -12,25 +12,21 @@
 using std::cout;
 using std::endl;
 
-#define PLAYGROUND_WIDTH 50
-#define PLAYGROUND_HEIGHT 31
-#define PLAYER_MIN_X 1
-#define PLAYER_MAX_X (PLAYGROUND_WIDTH - 1)
-#define PLAYER_MIN_Y 1
-#define PLAYER_MAX_Y (PLAYGROUND_HEIGHT - 1)
-
 class Game {
 public:
     Game();
+    ~Game();
     void run();
     void reset();
 private:
     void initPlayground();
     void printPlayground();
     void putSnakeInPlayground();
-    static void clearTerminal();
+    void updatePlaygroundSnakeHead();
+    void updatePlaygroundSnakeTail();
     bool gameEnded;
-    Snake snakePlayer;
+    int score;
+    Snake * snakePlayer;
     vector<vector<char>> playground;
 };
 
